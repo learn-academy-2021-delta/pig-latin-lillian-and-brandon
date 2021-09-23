@@ -33,7 +33,28 @@ class App extends Component{
       })
       console.log("vowelsArray:", vowelsArray)
 
+      let vowelIndex = 0
+      if(vowelsArray.includes(userInput[0])) {
+        return userInput + "way"
+      } else {
+        return "hi"
+      }
+
+
       // your code here!
+      // split already logged
+      // vowels already found using filter
+      // using loop on vowelsArray return index of the vowel: vowelIndex
+      // return index snippet of the string: find the index of all characters prior to the index of first vowel
+        // all indexes must be < length of the firstvowel index
+        //charAt
+      // window filter['w', 'i', 'n', 'd', 'o', 'w']
+      // return characters [w]
+      // .push
+      // concat the values in each index
+      // join the first indexes
+
+
 
       // Remember: console.log is your friend :)
 
