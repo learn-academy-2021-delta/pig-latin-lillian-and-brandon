@@ -37,13 +37,14 @@ class App extends Component{
       var firstVowelIndex = currentWord.indexOf(vowelsArray[0])
       if (firstVowelIndex === 0){
         return currentWord + "way"
-      }
-    })
+      } else if (firstVowelIndex !== 0) {
+          console.log(currentWord.slice([0,firstVowelIndex]).substring(firstVowelIndex))
+    }
+
+//
 
 
 
-    
-    
 
     // function translatePigLatin(userInput) {
 
@@ -57,7 +58,7 @@ class App extends Component{
     //     }
     //     return false;
     //   }
-    
+
     //   // if str begins with vowel case
     //   if (isVowelFirstLetter()) {
     //     userInput += 'way';
@@ -65,16 +66,16 @@ class App extends Component{
     //   else {
     //     // consonants to move to the end of string
     //     var consonants = '';
-    
+
     //     while (isVowelFirstLetter() === false) {
     //       consonants += userInput.slice(0,1);
     //       // remove consonant from str beginning
     //       userInput = userInput.slice(1);
     //     }
-    
+
     //     userInput += consonants + 'ay';
     //   }
-    
+
     //   return userInput;
     // }
 
@@ -95,7 +96,7 @@ class App extends Component{
 
       //--------------------------------------------
     // function pigLatin (phrase){
-      
+
     //   const vowels = ["a", "e", "i", "o", "u"]
     //   let vowelIndex = 0
     //   if(vowels.includes(phrase[0])) {
@@ -130,7 +131,7 @@ class App extends Component{
 
 
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
-      
+
 
 
     // joining the array back to a string of translated words
@@ -143,7 +144,7 @@ class App extends Component{
     this.setState({phraseTranslated: translatedWords})
   }
 
-  
+
   restartGame = () => {
     // this method restarts the game by setting the original state
     // ACTION ITEM: when you are ready for your full user experience, delete the test words in phrase so that is assigned an empty string
