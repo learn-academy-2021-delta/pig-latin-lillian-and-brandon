@@ -37,9 +37,15 @@ class App extends Component{
       var firstVowelIndex = currentWord.indexOf(vowelsArray[0])
       if (firstVowelIndex === 0){
         return currentWord + "way"
+      }else if(currentWord[0] === "y"){
+          return (currentWord.slice(1) + "y" + "ay") // this is for the word yummy. i checked if the firt letter of a word is "y", and if it is, it will take everything after the first y, and add a y to the end plus an "ay"
+        }else if(currentWord[0] === "q"){
+          return (currentWord.slice(2) + "qu" + "ay") // for queen, i checked if the first letter in the word was a "q" and if it does i know that "u" follows "q" so i removed both of them, moved it to the end, and tagged on "ay"
       } else if (firstVowelIndex !== 0) {
-          console.log(currentWord.slice([0,firstVowelIndex]).substring(firstVowelIndex))
-    }
+          return (currentWord.slice(firstVowelIndex) + currentWord.slice(0, firstVowelIndex) + "ay") // i did slice(first vowel index to pull everything before the first vowel, then used slice again to paste it back in after the new word, finally added ay to the end)
+        
+      }
+    })
 
 //
 
