@@ -32,14 +32,85 @@ class App extends Component{
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
       })
       console.log("vowelsArray:", vowelsArray)
-
-      let vowelIndex = 0
-      if(vowelsArray.includes(userInput[0])) {
-        return userInput + "way"
-      } else {
-        return "hi"
+      console.log(vowelsArray[0])
+      console.log(currentWord.indexOf(vowelsArray[0]))
+      var firstVowelIndex = currentWord.indexOf(vowelsArray[0])
+      if (firstVowelIndex === 0){
+        return currentWord + "way"
       }
+    })
 
+
+
+    
+    
+
+    // function translatePigLatin(userInput) {
+
+    //   // returns true only if the first letter in str is a vowel
+    //   function isVowelFirstLetter() {
+    //     var vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
+    //     for (i = 0; i < vowels.length; i++) {
+    //       if (vowels[i] === userInput[0]) {
+    //         return true;
+    //       }
+    //     }
+    //     return false;
+    //   }
+    
+    //   // if str begins with vowel case
+    //   if (isVowelFirstLetter()) {
+    //     userInput += 'way';
+    //   }
+    //   else {
+    //     // consonants to move to the end of string
+    //     var consonants = '';
+    
+    //     while (isVowelFirstLetter() === false) {
+    //       consonants += userInput.slice(0,1);
+    //       // remove consonant from str beginning
+    //       userInput = userInput.slice(1);
+    //     }
+    
+    //     userInput += consonants + 'ay';
+    //   }
+    
+    //   return userInput;
+    // }
+
+
+//---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+      //--------------------------------------------
+    // function pigLatin (phrase){
+      
+    //   const vowels = ["a", "e", "i", "o", "u"]
+    //   let vowelIndex = 0
+    //   if(vowels.includes(phrase[0])) {
+    //     return phrase + "way"
+    //   } else {
+    //     for (let char of phrase) {
+    //       if (vowels.includes(char)){
+    //         vowelIndex = phrase.indexOf(char)
+    //         break;
+    //       }
+    //     }
+    //     return phrase.slice(vowelIndex) + phrase.slice(0, vowelIndex) + "ay"
+    //   }
+    // }
+//-----------------------------------------------------
 
       // your code here!
       // split already logged
@@ -56,12 +127,10 @@ class App extends Component{
 
 
 
-      // Remember: console.log is your friend :)
 
 
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
-      return currentWord
-    })
+      
 
 
     // joining the array back to a string of translated words
@@ -74,6 +143,7 @@ class App extends Component{
     this.setState({phraseTranslated: translatedWords})
   }
 
+  
   restartGame = () => {
     // this method restarts the game by setting the original state
     // ACTION ITEM: when you are ready for your full user experience, delete the test words in phrase so that is assigned an empty string
