@@ -32,15 +32,120 @@ class App extends Component{
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
       })
       console.log("vowelsArray:", vowelsArray)
+      console.log(vowelsArray[0])
+      console.log(currentWord.indexOf(vowelsArray[0]))
+
+      var firstVowelIndex = currentWord.indexOf(vowelsArray[0])
+      if (firstVowelIndex === 0){
+        // return currentWord + "way"
+        console.log(currentWord + "way")
+      }else if(currentWord[0] === "y"){
+          // return (currentWord.slice(1) + "y" + "ay")
+          console.log(currentWord.slice(1) + "y" + "ay")
+          // this is for the word yummy. i checked if the firt letter of a word is "y", and if it is, it will take everything after the first y, and add a y to the end plus an "ay"
+        }else if(currentWord[0] === "q"){
+          // return (currentWord.slice(2) + "qu" + "ay")
+          console.log(currentWord.slice(2) + "qu" + "ay")
+           // for queen, i checked if the first letter in the word was a "q" and if it does i know that "u" follows "q" so i removed both of them, moved it to the end, and tagged on "ay"
+      } else if (firstVowelIndex !== 0) {
+          // return (currentWord.slice(firstVowelIndex) + currentWord.slice(0, firstVowelIndex) + "ay") 
+          console.log((currentWord.slice(firstVowelIndex) + currentWord.slice(0, firstVowelIndex) + "ay") )
+          // i did slice(first vowel index to pull everything before the first vowel, then used slice again to paste it back in after the new word, finally added ay to the end)
+        
+      }
+    })
+
+//
+
+
+
+
+    // function translatePigLatin(userInput) {
+
+    //   // returns true only if the first letter in str is a vowel
+    //   function isVowelFirstLetter() {
+    //     var vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
+    //     for (i = 0; i < vowels.length; i++) {
+    //       if (vowels[i] === userInput[0]) {
+    //         return true;
+    //       }
+    //     }
+    //     return false;
+    //   }
+
+    //   // if str begins with vowel case
+    //   if (isVowelFirstLetter()) {
+    //     userInput += 'way';
+    //   }
+    //   else {
+    //     // consonants to move to the end of string
+    //     var consonants = '';
+
+    //     while (isVowelFirstLetter() === false) {
+    //       consonants += userInput.slice(0,1);
+    //       // remove consonant from str beginning
+    //       userInput = userInput.slice(1);
+    //     }
+
+    //     userInput += consonants + 'ay';
+    //   }
+
+    //   return userInput;
+    // }
+
+
+//---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+      //--------------------------------------------
+    // function pigLatin (phrase){
+
+    //   const vowels = ["a", "e", "i", "o", "u"]
+    //   let vowelIndex = 0
+    //   if(vowels.includes(phrase[0])) {
+    //     return phrase + "way"
+    //   } else {
+    //     for (let char of phrase) {
+    //       if (vowels.includes(char)){
+    //         vowelIndex = phrase.indexOf(char)
+    //         break;
+    //       }
+    //     }
+    //     return phrase.slice(vowelIndex) + phrase.slice(0, vowelIndex) + "ay"
+    //   }
+    // }
+//-----------------------------------------------------
 
       // your code here!
+      // split already logged
+      // vowels already found using filter
+      // using loop on vowelsArray return index of the vowel: vowelIndex
+      // return index snippet of the string: find the index of all characters prior to the index of first vowel
+        // all indexes must be < length of the firstvowel index
+        //charAt
+      // window filter['w', 'i', 'n', 'd', 'o', 'w']
+      // return characters [w]
+      // .push
+      // concat the values in each index
+      // join the first indexes
 
-      // Remember: console.log is your friend :)
+
+
 
 
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
-      return currentWord
-    })
+
 
 
     // joining the array back to a string of translated words
@@ -52,6 +157,7 @@ class App extends Component{
     // no need to change this method
     this.setState({phraseTranslated: translatedWords})
   }
+
 
   restartGame = () => {
     // this method restarts the game by setting the original state
